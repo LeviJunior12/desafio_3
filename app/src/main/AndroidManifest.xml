@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Desafio_3">
-        <activity android:name=".ui.SplashActivity"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.MenuActivity"></activity>
+        <activity android:name=".ui.RegisterActivity" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

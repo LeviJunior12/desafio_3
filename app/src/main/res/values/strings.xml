@@ -6,4 +6,13 @@
     <string name="remember">Remember</string>
     <string name="txt_top_login">Welcome to the Marvel HQs</string>
     <string name="create_account">Create account</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <!--
+    This string is used for square devices and overridden by hello_world in
+    values-round/strings.xml for round devices.
+    -->
+    <string name="hello_world">Hello Square World!</string>
+    <string name="til_name">Name</string>
+    <string name="btn_register">Save</string>
+    <string name="title_register">Register</string>
 </resources>
