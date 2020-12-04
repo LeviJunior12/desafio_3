@@ -6,20 +6,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
+import androidx.activity.viewModels
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafio_3.R
 import com.example.desafio_3.adapter.HqsAdapter
 import com.example.desafio_3.entity.Hqs
+import com.example.desafio_3.entity.marvel.ComicsWrapper
+import com.example.desafio_3.entity.marvel.Results
+import com.example.desafio_3.service.service
+import com.example.desafio_3.viewmodel.MenuViewModel
 import kotlinx.android.synthetic.main.fragment_hqs.*
 
 class HqsFragment : Fragment() {
 
     lateinit var recycleView: RecyclerView
     lateinit var gridLayoutManager: GridLayoutManager
-    var listHqs = setDataInList()
     lateinit var hqsAdapter: HqsAdapter
+
+    val viewModel by viewModels<MenuViewModel>{
+        object : ViewModelProvider.Factory{
+            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+                return MenuViewModel(service) as T // Com parametro
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,12 +47,18 @@ class HqsFragment : Fragment() {
         // Inflate the layout for this fragment
         var view =  inflater.inflate(R.layout.fragment_hqs, container, false)
 
+        viewModel.listResult.observe(viewLifecycleOwner) {
+            hqsAdapter = HqsAdapter(it)
+            rv_hqs.adapter = hqsAdapter
+
+        }
+
+        viewModel.getListRepo()
+
         recycleView = view.findViewById(R.id.rv_hqs)
         gridLayoutManager = GridLayoutManager(this.context, 3, LinearLayoutManager.VERTICAL, false)
         recycleView.layoutManager = gridLayoutManager
         recycleView.setHasFixedSize(true)
-        hqsAdapter = HqsAdapter(listHqs)
-        recycleView.adapter = hqsAdapter
 
         return view
     }
@@ -46,30 +67,4 @@ class HqsFragment : Fragment() {
         fun newInstance() = HqsFragment()
     }
 
-    private fun setDataInList(): ArrayList<Hqs> {
-        var items: ArrayList<Hqs> = ArrayList()
-
-        items.add(Hqs(1, R.drawable.marvel_logo))
-        items.add(Hqs(2, R.drawable.marvel_logo))
-        items.add(Hqs(3, R.drawable.marvel_logo))
-        items.add(Hqs(4, R.drawable.marvel_logo))
-        items.add(Hqs(5, R.drawable.marvel_logo))
-        items.add(Hqs(6, R.drawable.marvel_logo))
-        items.add(Hqs(7, R.drawable.marvel_logo))
-        items.add(Hqs(8, R.drawable.marvel_logo))
-        items.add(Hqs(9, R.drawable.marvel_logo))
-        items.add(Hqs(10, R.drawable.marvel_logo))
-        items.add(Hqs(11, R.drawable.marvel_logo))
-        items.add(Hqs(12, R.drawable.marvel_logo))
-        items.add(Hqs(13, R.drawable.marvel_logo))
-        items.add(Hqs(14, R.drawable.marvel_logo))
-        items.add(Hqs(15, R.drawable.marvel_logo))
-        items.add(Hqs(16, R.drawable.marvel_logo))
-        items.add(Hqs(17, R.drawable.marvel_logo))
-        items.add(Hqs(18, R.drawable.marvel_logo))
-        items.add(Hqs(19, R.drawable.marvel_logo))
-        items.add(Hqs(20, R.drawable.marvel_logo))
-
-        return items
-    }
 }
