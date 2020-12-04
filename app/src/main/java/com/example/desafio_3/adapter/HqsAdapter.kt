@@ -1,20 +1,12 @@
 package com.example.desafio_3.adapter
 
-import android.icu.number.NumberFormatter.with
-import android.icu.number.NumberRangeFormatter.with
-import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
-import androidx.core.os.bundleOf
-import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafio_3.R
-import com.example.desafio_3.entity.Hqs
-import com.example.desafio_3.entity.marvel.ComicsWrapper
 import com.example.desafio_3.entity.marvel.Results
 import com.squareup.picasso.Picasso
 

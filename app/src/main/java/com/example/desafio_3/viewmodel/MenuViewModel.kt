@@ -1,12 +1,8 @@
 package com.example.desafio_3.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.desafio_3.entity.Hqs
-import com.example.desafio_3.entity.marvel.ComicsWrapper
-import com.example.desafio_3.entity.marvel.Data
 import com.example.desafio_3.entity.marvel.Results
 import com.example.desafio_3.service.Service
 import kotlinx.coroutines.launch

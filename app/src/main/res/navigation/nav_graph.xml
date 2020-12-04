@@ -22,5 +22,17 @@
         <action
             android:id="@+id/action_detailHqsragment_to_hqsFragment"
             app:destination="@id/hqsFragment" />
+        <action
+            android:id="@+id/action_detailHqsragment_to_expandImageFragment"
+            app:destination="@id/expandImageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/expandImageFragment"
+        android:name="com.example.desafio_3.ui.ExpandImageFragment"
+        android:label="fragment_expand_image"
+        tools:layout="@layout/fragment_expand_image" >
+        <action
+            android:id="@+id/action_expandImageFragment_to_detailHqsragment"
+            app:destination="@id/detailHqsragment" />
     </fragment>
 </navigation>

@@ -5,22 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
-import androidx.activity.viewModels
 import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.desafio_3.R
 import com.example.desafio_3.adapter.HqsAdapter
-import com.example.desafio_3.entity.Hqs
-import com.example.desafio_3.entity.marvel.ComicsWrapper
-import com.example.desafio_3.entity.marvel.Results
 import com.example.desafio_3.service.service
 import com.example.desafio_3.viewmodel.MenuViewModel
 import kotlinx.android.synthetic.main.fragment_hqs.*
@@ -53,7 +46,6 @@ class HqsFragment : Fragment(), HqsAdapter.onClickLIstenerHq {
         viewModel.listResult.observe(viewLifecycleOwner) {
             hqsAdapter = HqsAdapter(it, this)
             rv_hqs.adapter = hqsAdapter
-
         }
 
         var recycleView = view.rv_hqs
