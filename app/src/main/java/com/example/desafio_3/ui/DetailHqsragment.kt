@@ -12,6 +12,7 @@ import com.example.desafio_3.entity.marvel.Results
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_detail_hqsragment.*
 import kotlinx.android.synthetic.main.fragment_detail_hqsragment.view.*
+import java.text.DateFormat
 import java.text.SimpleDateFormat
 import java.time.LocalDate
 import java.util.*

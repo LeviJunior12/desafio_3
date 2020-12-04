@@ -32,6 +32,10 @@ class HqsFragment : Fragment(), HqsAdapter.onClickLIstenerHq {
         }
     }
 
+    override fun onStart() {
+        super.onStart()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -45,11 +49,11 @@ class HqsFragment : Fragment(), HqsAdapter.onClickLIstenerHq {
 
         viewModel.listResult.observe(viewLifecycleOwner) {
             hqsAdapter = HqsAdapter(it, this)
-            rv_hqs.adapter = hqsAdapter
+            view.rv_hqs.adapter = hqsAdapter
         }
 
         var recycleView = view.rv_hqs
-        gridLayoutManager = GridLayoutManager(this.context, 3, LinearLayoutManager.VERTICAL, false)
+        gridLayoutManager = GridLayoutManager(context, 3, LinearLayoutManager.VERTICAL, false)
 
         recycleView.layoutManager = gridLayoutManager
         recycleView.setHasFixedSize(true)

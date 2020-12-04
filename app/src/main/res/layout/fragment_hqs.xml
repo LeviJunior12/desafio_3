@@ -3,12 +3,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".ui.HqsFragment">
 
-    <include
-        android:id="@+id/ic_toolbar"
-        layout="@layout/toolbar" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_icon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_500"
+        app:navigationIcon="@drawable/marvel_logo_toolbar"
+         />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_hqs"

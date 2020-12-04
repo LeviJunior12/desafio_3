@@ -14,16 +14,5 @@ class MenuActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        //listHqs()
-
-        setSupportActionBar(ic_toolbar as Toolbar?)
-
     }
-
-//    private fun listHqs() {
-//        supportFragmentManager
-//            .beginTransaction()
-//            .add(R.id.container_root, HqsFragment())
-//            .commit()
-//    }
 }

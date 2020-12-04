@@ -6,9 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.RegisterActivity">
 
-    <include
-        android:id="@+id/ic_toolbar"
-        layout="@layout/toolbar" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/red_500"
+        android:textAlignment="center"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:titleTextColor="@color/white" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -22,11 +27,17 @@
             android:layout_marginEnd="10dp"
             android:orientation="vertical">
 
-            <include
-                android:id="@+id/ic_top"
-                layout="@layout/login_top"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="60dp" />
+                android:layout_height="wrap_content">
+
+                <include
+                    android:id="@+id/ic_top"
+                    layout="@layout/login_top"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp" />
+
+            </RelativeLayout>
 
             <include
                 android:id="@+id/ic_body"
