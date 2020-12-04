@@ -12,12 +12,12 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp">
+        android:padding="1dp">
 
         <ImageView
             android:id="@+id/iv_cover_page"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
             android:src="@drawable/marvel_logo"
             android:layout_marginStart="8dp"
             android:layout_marginTop="5dp"/>

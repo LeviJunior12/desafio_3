@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/hqsFragment">
+
+    <fragment
+        android:id="@+id/hqsFragment"
+        android:name="com.example.desafio_3.ui.HqsFragment"
+        android:label="fragment_hqs"
+        tools:layout="@layout/fragment_hqs" >
+        <action
+            android:id="@+id/action_hqsFragment_to_detailHqsragment"
+            app:destination="@id/detailHqsragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailHqsragment"
+        android:name="com.example.desafio_3.ui.DetailHqsragment"
+        android:label="fragment_detail_hqsragment"
+        tools:layout="@layout/fragment_detail_hqsragment" >
+        <action
+            android:id="@+id/action_detailHqsragment_to_hqsFragment"
+            app:destination="@id/hqsFragment" />
+    </fragment>
+</navigation>

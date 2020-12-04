@@ -1,6 +1,7 @@
 package com.example.desafio_3.entity.marvel
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 /*
 Copyright (c) 2020 Kotlin com.example.desafio_3.entity.marvel.Data Classes Generated from JSON powered by http://www.json2kotlin.com
@@ -22,4 +23,5 @@ data class Results (
     @SerializedName("prices") val prices : List<Prices>,
     @SerializedName("dates") val dates: ArrayList<Dates>,
     @SerializedName("issueNumber") val issueNumber : String,
-)
+    @SerializedName("pageCount") val pageCount : String
+): Serializable
